@@ -1,13 +1,14 @@
 import hpfeeds
-
+import json
 import sys
 
 
 
 def on_message(identifier, channel, payload):
 
-    print('on message')
-    print(identifier, payload)
+    f = open("data.txt", "a")
+    f.write(payload + '\n')
+
 
 
 def on_error(payload):
@@ -16,9 +17,9 @@ def on_error(payload):
 
 
 def main():
-    hpc = hpfeeds.new('localhost', 10000, 'james', 'secret')
+    hpc = hpfeeds.new('157.245.114.100', 10000, 'HONEYPOT', 'H0N3YP0T4U')
 
-    hpc.subscribe('mychan')
+    hpc.subscribe('HONEYPOT')
     hpc.run(on_message, on_error)
     hpc.close()
 

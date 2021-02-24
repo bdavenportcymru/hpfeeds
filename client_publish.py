@@ -3,7 +3,7 @@ from hpfeeds.asyncio import ClientSession
 
 
 async def main():
-    async with ClientSession('localhost', 10000, 'james', 'secret') as client:
+    async with ClientSession('157.245.114.100', 10000, 'HONEYPOT', 'H0N3YP0T4U') as client:
         client.publish('mychan', b'{"data": "Hello World"}')
 
 

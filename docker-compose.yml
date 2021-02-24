@@ -8,15 +8,17 @@ services:
     image: hpfeeds/hpfeeds-broker
     container_name: hpfeeds
     environment:
-      HPFEEDS_JAMES_SECRET: 'secret'
-      HPFEEDS_JAMES_SUBCHANS: 'mychan'
-      HPFEEDS_JAMES_PUBCHANS: 'mychan'
+      HPFEEDS_HONEYPOT_SECRET: 'H0N3YP0T4U'
+      HPFEEDS_HONEYPOT_SUBCHANS: 'HONEYPOT'
+      HPFEEDS_HONEYPOT_PUBCHANS: 'HONEYPOT'
    
     command:
      - '/app/bin/hpfeeds-broker'
      - '--endpoint=tcp:port=10000'
+     - '--exporter=0.0.0.0:9090'
      - '--auth=env'
     ports:
      - "0.0.0.0:10000:10000"
+    
     volumes:
      - hpfeeds_userdb:/app/var
