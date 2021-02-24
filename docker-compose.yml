@@ -1,0 +1,22 @@
+version: '2.1'
+
+volumes:
+  hpfeeds_userdb: {}
+
+services:
+  hpfeeds:
+    image: hpfeeds/hpfeeds-broker
+    container_name: hpfeeds
+    environment:
+      HPFEEDS_JAMES_SECRET: 'secret'
+      HPFEEDS_JAMES_SUBCHANS: 'mychan'
+      HPFEEDS_JAMES_PUBCHANS: 'mychan'
+   
+    command:
+     - '/app/bin/hpfeeds-broker'
+     - '--endpoint=tcp:port=10000'
+     - '--auth=env'
+    ports:
+     - "0.0.0.0:10000:10000"
+    volumes:
+     - hpfeeds_userdb:/app/var
