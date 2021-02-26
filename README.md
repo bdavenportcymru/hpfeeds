@@ -5,11 +5,11 @@
 
 ## TOC
 
-* [Broker Configuration](##Broker-Configuration)
-    * [Environment-Variables](###Environment-Variables)
-* [Client Configuration](##Client-Configuration)
-    * [Publisher](###Publisher)
-    * [Subcriber](###Subcriber)
+* [Broker Configuration](##broker-configuration)
+    * [Environment-Variables](###environment-variables)
+* [Client Configuration](##client-configuration)
+    * [Publisher](###publisher)
+    * [Subcriber](###subcriber)
 
 ***
 
