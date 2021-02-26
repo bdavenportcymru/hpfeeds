@@ -3,8 +3,8 @@ from hpfeeds.asyncio import ClientSession
 
 
 async def main():
-    async with ClientSession('157.245.114.100', 10000, 'HONEYPOT', 'H0N3YP0T4U') as client:
-        client.publish('mychan', b'{"data": "Hello World"}')
+    async with ClientSession('x.x.x.x', 10000, 'IDENT', 'secret_password') as client:
+        client.publish('channel_name', b'{"data": "Hello World"}')
 
 
 loop = asyncio.get_event_loop()

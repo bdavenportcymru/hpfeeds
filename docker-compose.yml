@@ -8,14 +8,13 @@ services:
     image: hpfeeds/hpfeeds-broker
     container_name: hpfeeds
     environment:
-      HPFEEDS_HONEYPOT_SECRET: 'H0N3YP0T4U'
-      HPFEEDS_HONEYPOT_SUBCHANS: 'HONEYPOT'
-      HPFEEDS_HONEYPOT_PUBCHANS: 'HONEYPOT'
+      HPFEEDS_IDENT_SECRET: 'secret_password'
+      HPFEEDS_IDENT_SUBCHANS: 'channel_name'
+      HPFEEDS_IDENT_PUBCHANS: 'channel_name'
    
     command:
      - '/app/bin/hpfeeds-broker'
      - '--endpoint=tcp:port=10000'
-     - '--exporter=0.0.0.0:9090'
      - '--auth=env'
     ports:
      - "0.0.0.0:10000:10000"
